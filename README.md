@@ -18,12 +18,12 @@ Usage
 
 While the API Press theme is active your permalink structure will be automatically changed to `/%category%/%postname%/`, the only thing you should do is choose a fitting name (like "api") for your category base. If no special is selected the default **"category"** is used.
 
-Opening `your-wordpress-site.com/category-base` will now show a HTML representation of all your root resources (parentless categories) from which you will be able to visually navigate through all your data inside the resources tree.
+Opening `http://your-wordpress-site.com/category-base` will now show a HTML representation of all your root resources (parentless categories) from which you will be able to visually navigate through all your data inside the resources tree.
 
 To change the response data format use the `format` param:
 
-* `your-wordpress-site.com/category-base/?format='json'` will return the data in json format
-* `your-wordpress-site.com/category-base/?format='xml'` will return the data in xml format
+* `http://your-wordpress-site.com/category-base/?format='json'` will return the data in json format
+* `http://your-wordpress-site.com/category-base/?format='xml'` will return the data in xml format
 
 JSON format examples
 -
@@ -111,7 +111,7 @@ Response example for request at `http://your-wordpress-site/cat-1/post-1/?format
           "link": "http://your-wordpress-site.com/wp-content/uploads/2014/03/attachment-2.jpg",
           "width": 640,
           "height": 482,
-          "sizes [
+          "sizes": [
             {
               "thumbnail":
                 {
@@ -292,15 +292,13 @@ While the theme is active requests with path that start with the category base, 
 
 Take for example the resources tree
 
-`cat-1
-  cat-11
-    cat-111`
+`cat-1 --> cat-11 --> cat-111`
 
 If an item `post-1` is assigned to `cat-11` and `cat-111` resources then
 
-* `your-wordpress-site.com/cat-1/cat-11/post-1/ (WordPress default)`
-* `your-wordpress-site.com/category-base/cat-1/cat-11/post-1/`
-* `your-wordpress-site.com/category-base/cat-1/cat-11/cat-111/post-1/`
+* `http://your-wordpress-site.com/cat-1/cat-11/post-1/ (WordPress default)`
+* `http://your-wordpress-site.com/category-base/cat-1/cat-11/post-1/`
+* `http://your-wordpress-site.com/category-base/cat-1/cat-11/cat-111/post-1/`
 
 will all be considered valid `post-1` urls.
 
@@ -314,12 +312,14 @@ Bonus: Full items
 
 While asking for resources the eventual items listed will present only a subset of their data, which you can retrieve with a request to the items themselves. If you add the `fullitems` param equal to 1 or true to your resource request url the items in the response will have all their data.
 
+Example: `http://your-wordpress-site.com/category-base/cat-1/cat-11/?format=json&fullitems=true`
+
 Bonus: Pages
 -
 
-API Press theme is already configured to return pages data in the requested format, just remember that pages remains outside the _categories-as-resources_ paradigm, so they won't be show under the `your-wordpress-site.com/category-base/` entry point.
+API Press theme is already configured to return pages data in the requested format, just remember that pages remains outside the _categories-as-resources_ paradigm, so they won't be shown under the `http://your-wordpress-site.com/category-base/` entry point.
 
-Also if you set your category base = a page slug, while the API logic will continue to work, `your-wordpress-site.com/category-base/` will show your page instead of the resources list.
+Also if you set your category base equals to a page slug, while the API logic will continue to work, `http://your-wordpress-site.com/category-base/` will show your page instead of the resources list.
 
 License
 -
