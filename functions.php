@@ -88,7 +88,7 @@ function check_api_chunks_relation($parent_chunk, $child_chunk, $is_first_resour
 	$parent_resource = get_category_by_slug($parent_chunk);
 	$child_resource  = get_category_by_slug($child_chunk);
 
-	if (!$parent_resource || ($is_first_resource && 0 !== $parent_resource->parent)) return false;
+	if (!$parent_resource || ($is_first_resource && 0 != $parent_resource->parent)) return false;
 
 	if (!$child_resource) {
 		$child_item = get_posts(array('name' => $child_chunk, 'category' => $parent_chunk));
