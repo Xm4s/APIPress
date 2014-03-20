@@ -28,7 +28,7 @@ To change the response data format use the `format` param:
 JSON format examples
 -
 
-Response example for request at `http://your-wordpress-site/category-base/cat-1/?format=json`
+Response example for request at `http://your-wordpress-site.com/category-base/cat-1/?format=json`
 
 ```json
 {
@@ -40,7 +40,7 @@ Response example for request at `http://your-wordpress-site/category-base/cat-1/
       "slug": "cat-11",
       "description": "Category 11 description",
       "count": "1",
-      "link":"http://your-wordpress-site/category-base/cat-1/cat-11/"
+      "link":"http://your-wordpress-site.com/category-base/cat-1/cat-11/"
     },
     {
       "ID": "4",
@@ -49,13 +49,13 @@ Response example for request at `http://your-wordpress-site/category-base/cat-1/
       "slug": "cat-12",
       "description": "Category 12 description",
       "count": "1",
-      "link":"http://your-wordpress-site/category-base/cat-1/cat-12/"
+      "link":"http://your-wordpress-site.com/category-base/cat-1/cat-12/"
     }
   ],
   "items": [
     {
       "ID": 5,
-      "link": "http://your-wordpress-site/cat-1/post-1/"
+      "link": "http://your-wordpress-site.com/cat-1/post-1/"
       "slug": "post-1",
       "title": "Post 1",
       "excerpt": "Post 1 excerpt"
@@ -64,14 +64,14 @@ Response example for request at `http://your-wordpress-site/category-base/cat-1/
 }
 ```
 
-Response example for request at `http://your-wordpress-site/cat-1/post-1/?format=json`
+Response example for request at `http://your-wordpress-site.com/cat-1/post-1/?format=json`
 
 ```json
 {
   "items": [
     {
       "ID": 5,
-      "link": "http://your-wordpress-site/cat-1/post-1/",
+      "link": "http://your-wordpress-site.com/cat-1/post-1/",
       "slug": "post-1",
       "title": "Post 1",
       "author": "Xmas",
@@ -158,7 +158,7 @@ Response example for request at `http://your-wordpress-site/cat-1/post-1/?format
 XML format example
 -
 
-Response example for request at `http://your-wordpress-site/category-base/cat-1/?format=xml`
+Response example for request at `http://your-wordpress-site.com/category-base/cat-1/?format=xml`
 
 ```xml
 <root>
@@ -170,7 +170,7 @@ Response example for request at `http://your-wordpress-site/category-base/cat-1/
       <slug>cat-11</slug>
       <description><![CDATA[Category 11 description]]></description>
       <count>1</count>
-      <link>http://your-wordpress-site/category-base/cat-1/cat-11/</link>
+      <link>http://your-wordpress-site.com/category-base/cat-1/cat-11/</link>
     </resource>
     <resource key="0">
       <ID>4</ID>
@@ -179,13 +179,13 @@ Response example for request at `http://your-wordpress-site/category-base/cat-1/
       <slug>cat-11</slug>
       <description><![CDATA[Category 12 description]]></description>
       <count>1</count>
-      <link>http://your-wordpress-site/category-base/cat-1/cat-12/</link>
+      <link>http://your-wordpress-site.com/category-base/cat-1/cat-12/</link>
     </resource>
   </resources>
   <items>
     <item key="0">
       <ID>5</ID>
-      <link>http://your-wordpress-site/cat-1/post-1/</link>
+      <link>http://your-wordpress-site.com/cat-1/post-1/</link>
       <slug>post-1</slug>
       <title><![CDATA[Post 1]]></title>
       <excerpt><![CDATA[Post 1 excerpt]]></excerpt>
@@ -194,14 +194,14 @@ Response example for request at `http://your-wordpress-site/category-base/cat-1/
 </root>
 ```
 
-Response example for request at `http://your-wordpress-site/cat-1/post-1/?format=xml`
+Response example for request at `http://your-wordpress-site.com/cat-1/post-1/?format=xml`
 
 ```xml
 <root>
   <items>
     <item key="0">
       <ID>5</ID>
-      <link>http://your-wordpress-site/cat-1/post-1/</link>
+      <link>http://your-wordpress-site.com/cat-1/post-1/</link>
       <slug>post-1</slug>
       <title><![CDATA[Post 1]]></title>
       <author><![CDATA[Xmas]]></author>
