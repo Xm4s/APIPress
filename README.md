@@ -8,6 +8,11 @@ How does it work
 
 API Press translate categories into resources, which may contains either other resources or items (posts). Requesting a resource will return a representation of its contents while requesting a specific item will return all its properties.
 
+Compatibility
+-
+
+API press has been tested and works with all versions of WordPress from 3.2 to 3.9-alpha
+
 Installation
 -
 
@@ -16,7 +21,7 @@ Just put a folder with all the theme files under your `wp-content/themes` WordPr
 Usage
 -
 
-While the API Press theme is active your permalink structure will be automatically changed to `/%category%/%postname%/`, the only thing you should do is choose a fitting name (like "api") for your category base. If no special is selected the default **"category"** is used.
+While the API Press theme is active your permalink structure will be automatically changed to `/%category%/%postname%/`, the only thing you should do is choose a fitting name (like "api") for your category base. If no special name is selected the default **"category"** is used.
 
 Opening `http://your-wordpress-site.com/category-base` will now show a HTML representation of all your root resources (parentless categories) from which you will be able to visually navigate through all your data inside the resources tree.
 
