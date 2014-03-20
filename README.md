@@ -326,6 +326,13 @@ API Press theme is already configured to return pages data in the requested form
 
 Also if you set your category base equals to a page slug, while the API logic will continue to work, `http://your-wordpress-site.com/category-base/` will show your page instead of the resources list.
 
+Bonus: Backbone App
+-
+
+Inside the `backbone-app` folder there's a sample Backbone/Handlebars App build on API Press. Its only purpose is just to show how to use Backbone to access the site resources and items. The app will respond to any valid API Press url with an `#` instead of `category-base/`.
+
+For example, if `http://your-wordpress-site.com/category-base/cat-1/cat-11` is a valid API Press url then `http://your-wordpress-site.com/#cat-1/cat-11` will be a valid Backbone App url.
+
 License
 -
 
