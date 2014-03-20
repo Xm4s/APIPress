@@ -1,0 +1,206 @@
+/**
+* html5doctor.com Reset Stylesheet v1.6.1
+*
+* Last Updated: 2010-09-17
+* Author: Richard Clark - http://richclarkdesign.com
+* Twitter: @rich_clark
+*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}nav ul,nav ol{list-style:none;list-style-image:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{text-decoration:none}mark{font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+
+
+/**
+* Useful LESS mixin and helper classes
+*/
+
+// Clearfix mixin
+
+.clearfix () {
+
+    .lt-ie8 & {
+        zoom : 1; // for IE 6/7 only, include this rule to trigger "hasLayout: 1" on the floats container
+    }
+
+    &:before, &:after {
+        content     : " ";
+        display     : table;
+        line-height : 0;
+    }
+
+    &:after {
+        clear : both;
+    }
+}
+
+// Border radius mixin
+
+.border-radius(@radius : 5px) {
+    -webkit-border-radius : @radius;
+       -moz-border-radius : @radius;
+            border-radius : @radius;
+}
+
+// Box sizing mixin
+
+.box-sizing (@sizing : border-box) {
+    -webkit-box-sizing : @sizing;
+       -moz-box-sizing : @sizing;
+            box-sizing : @sizing;
+}
+
+// Set global box sizing to border-box
+
+*, *:before, *:after {
+
+    .box-sizing();
+}
+
+// Helper classes
+
+.hidden {
+    display : none;
+}
+
+.invisible {
+    visibility : hidden;
+}
+
+.no-overflow {
+    overflow : hidden;
+}
+
+.temp-visibility {
+    height     : auto     !important;
+    display    : block    !important;
+    overflow   : hidden   !important;
+    position   : absolute !important;
+    visibility : visible  !important;
+}
+
+
+
+/**
+* API Press Backbone App Stylesheet
+*
+* Author: Marco 'Xmas' Colombo - http://spellmatrix.com
+*/
+
+.apipress-backbone-app {
+    color       : #666;
+    font-family : "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;;
+    font-size   : 16px;
+    line-height : 1.8em;
+    padding     : 1em;
+
+    h1, h2, h3 {
+        color       : #333;
+        font-size   : 32px;
+        line-height : 1.5em;
+    }
+
+    h2 {
+        font-size : 26px;
+    }
+
+    h3 {
+        font-size   : 20px;
+        line-height : 2em;
+    }
+
+    a {
+        color : #000080;
+    }
+
+    .api-content {
+        margin-top : 1em;
+
+        &.first-child {
+            margin-top : 0;
+        }
+    }
+
+    .api-list, .api-sublist {
+        list-style-type : none;
+    }
+
+    .api-list {
+
+        .api-list-item, .api-sublist-item {
+            overflow : hidden;
+
+            dl {
+
+                .clearfix();
+            }
+
+            dt {
+                color : #333;
+                clear : left;
+                float : left;
+            }
+
+            dd {
+                float : left;
+                margin-left : 6px;
+            }
+        }
+
+        .api-list-item {
+            margin : 1em 0 0;
+
+            &:first-child {
+                margin-top : 0.5em;
+            }
+        }
+
+        .api-sublist-item {
+            margin : 1em 0 0;
+
+            &:first-child {
+                margin : 0;
+            }
+        }
+    }
+
+    .handlebars-template {
+        padding : 1em;
+        border  : 1px solid #ccc;
+
+        .border-radius(20px);
+
+        &:before {
+            font-size   : 10px;
+            line-height : 1em;
+            text-transform : uppercase;
+        }
+
+        &.api-contents:before {
+            content : 'Handlebars api-contents template';
+        }
+
+        &.resources-content:before {
+            content : 'Handlebars resources-content template';
+        }
+
+        &.resources-list:before {
+            content : 'Handlebars resources-list template';
+        }
+
+        &.resources-list-item:before {
+            content : 'Handlebars resources-list-item template';
+        }
+
+        &.items-content:before {
+            content : 'Handlebars items-contents template';
+        }
+
+        &.items-list:before {
+            content : 'Handlebars items-list template';
+        }
+
+        &.items-list-item:before {
+            content : 'Handlebars items-list-item template';
+        }
+    }
+}

@@ -1,0 +1,119 @@
+<script type="text/x-handlebars-template" id="api-contents">
+    <div class="api-contents handlebars-template">
+    {{#if resources}}
+        <section class="api-content resources-content handlebars-template">
+        </section>
+    {{/if}}
+    {{#if items}}
+        <section class="api-content items-content handlebars-template">
+        </section>
+    {{/if}}
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="api-empty-contents">
+    <h2 class="api-title">No elements found</h2>
+</script>
+<script type="text/x-handlebars-template" id="resources-list">
+    <h2 class="api-title">Resources</h2>
+    <ul class="api-list resources-list handlebars-template"></ul>
+</script>
+<script type="text/x-handlebars-template" id="resources-list-item">
+    <li class="api-list-item resources-list-item handlebars-template">
+        {{#with resource}}
+        <h3>
+        {{#if hash}}
+            <a href="#{{hash}}">{{{name}}}</a>
+        {{else}}
+            {{{name}}}
+        {{/if}}
+        </h3>
+        <dl>
+            <dt>ID :</dt><dd>{{ID}}</dd>
+            <dt>Parent ID :</dt><dd>{{parent}}</dd>
+            <dt>Slug :</dt><dd>{{slug}}</dd>
+            <dt>Description :</dt><dd>{{{description}}}</dd>
+            <dt>Items count :</dt><dd>{{count}}</dd>
+        </dl>
+        {{/with}}
+    </li>
+</script>
+<script type="text/x-handlebars-template" id="items-list">
+    <h2 class="api-title">Items</h2>
+    <ul class="api-list items-list handlebars-template"></ul>
+</script>
+<script type="text/x-handlebars-template" id="items-list-item">
+    <li class="api-list-item items-list-item handlebars-template">
+        {{#with item}}
+        <h3>
+        {{#if hash}}
+            <a href="#{{hash}}">{{{title}}}</a>
+        {{else}}
+            {{title}}
+        {{/if}}
+        </h3>
+        <dl>
+            <dt>ID :</dt><dd>{{ID}}</dd>
+            <dt>Slug :</dt><dd>{{slug}}</dd>
+
+            {{#if author}}     <dt>Author :</dt><dd>{{{author}}}</dd>         {{/if}}
+            {{#if date}}       <dt>Date :</dt><dd>{{date}}</dd>               {{/if}}
+            {{#if tags}}       <dt>Tags :</dt><dd>{{{tags}}}</dd>             {{/if}}
+            {{#if categories}} <dt>Categories :</dt><dd>{{{categories}}}</dd> {{/if}}
+            {{#if excerpt}}    <dt>Excerpt :</dt><dd>{{{excerpt}}}</dd>       {{/if}}
+            {{#if content}}    <dt>Content :</dt><dd>{{{content}}}</dd>       {{/if}}
+
+            {{#if custom-fields}}
+                <dt>Custom fields =></dt>
+                <dd>
+                    <dl>
+                    {{#each custom-fields}}
+                        <dt>{{{this.key}}} : </dt><dd>{{{join this.values ', '}}}</dd>
+                    {{/each}}
+                    </dl>
+                </dd>
+            {{/if}}
+
+            {{#if attachments}}
+                <dt>Attachments =></dt>
+                <dd>
+                    <ul class="api-sublist">
+                    {{#each attachments}}
+                        <li class="api-sublist-item">
+                        {{#with this}}
+                            <a href="{{link}}">{{{title}}}</a>
+                            <dl>
+                                <dt>ID :</dt><dd>{{ID}}</dd>
+                                <dt>Caption :</dt><dd>{{{caption}}}</dd>
+                                <dt>Description :</dt><dd>{{{description}}}</dd>
+                            </dl>
+                        {{/with}}
+                        </li>
+                    {{/each}}
+                    </ul>
+                </dd>
+            {{/if}}
+
+            {{#if comments}}
+                <dt>Comments =></dt>
+                <dd>
+                    <ul class="api-sublist">
+                    {{#each comments}}
+                        <li class="api-sublist-item">
+                            <dl>
+                            {{#with this}}
+                                <dt>ID :</dt><dd>{{ID}}</dd>
+                                <dt>Author :</dt><dd>{{{author}}}</dd>
+                                <dt>Author email :</dt><dd>{{author-email}}</dd>
+                                <dt>Date :</dt><dd>{{date}}</dd>
+                                <dt>Content :</dt><dd>{{{content}}}</dd>
+                            {{/with}}
+                            </dl>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </dd>
+            {{/if}}
+        </dl>
+        {{/with}}
+    </li>
+</script>
