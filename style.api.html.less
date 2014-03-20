@@ -83,16 +83,20 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	font-family : "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;;
 	font-size   : 16px;
 	line-height : 1.8em;
-	padding     : 20px;
+	padding     : 1em;
 
-	h1, h2 {
+	h1, h2, h3 {
 		color       : #333;
 		font-size   : 32px;
 		line-height : 1.5em;
 	}
 
 	h2 {
-		font-size : 24px;
+		font-size : 26px;
+	}
+
+	h3 {
+		font-size : 20px;
 	}
 
 	a {
@@ -104,13 +108,14 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	}
 
 	.api-list {
-		padding-left : 20px;
+		margin-left : 1em;
 
 		.api-list-item, .api-sublist-item {
 			overflow : hidden;
 
 			dl {
-				overflow : hidden;
+
+				.clearfix();
 			}
 
 			dt {
@@ -126,7 +131,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 		}
 
 		.api-list-item {
-			margin : 1em 0;
+			margin : 0 0 1em;
 		}
 
 		.api-sublist-item {
