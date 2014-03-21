@@ -39,9 +39,9 @@ function launch_backbone_app() {
 };
 
 add_filter('body_class', 'add_backbone_body_class');
-add_filter('wp_footer', 'load_backbone_templates', 9);
-add_action('wp_enqueue_scripts', 'load_backbone_app', 10);
-add_filter('wp_footer', 'launch_backbone_app', 11);
+add_filter('wp_footer', 'load_backbone_templates', 1);
+add_action('wp_enqueue_scripts', 'load_backbone_app');
+add_filter('wp_footer', 'launch_backbone_app', 100);
 
 get_header();
 echo '<div class="content"></div>';
